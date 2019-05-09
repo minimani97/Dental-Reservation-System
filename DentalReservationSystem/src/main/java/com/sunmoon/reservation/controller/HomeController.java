@@ -1,4 +1,4 @@
-package com.sunmoon.reservation;
+package com.sunmoon.reservation.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -34,6 +34,13 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "reservation";
+	}
+	
+	@RequestMapping(value = "/scheduleCheck", method = RequestMethod.GET)
+	public String goScheduelCheck(Model model) {
+	   logger.info("goScheduleCheck enter!");
+
+	   return "calendar_test";
 	}
 	
 }

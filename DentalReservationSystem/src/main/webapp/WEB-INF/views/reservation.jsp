@@ -1,9 +1,10 @@
-
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>Hyper - Responsive Bootstrap 4 Admin Dashboard</title>
+<meta charset="UTF-8" />
+<title>Reservation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta
 	content="A fully featured admin theme which can be used to build CRM, CMS, etc."
@@ -16,6 +17,11 @@
 <link href="resources/css/icons.min.css" rel="stylesheet"
 	type="text/css" />
 <link href="resources/css/app.min.css" rel="stylesheet" type="text/css" />
+
+<!-- third party css -->
+<link href="resources/css/fullcalendar.min.css" rel="stylesheet"
+	type="text/css">
+<!-- third party css end -->
 
 </head>
 
@@ -472,37 +478,43 @@
 				<div class="container-fluid">
 
 					<!-- Start Wizard -->
-					<div id="rootwizard" style="margin-top: 20px;">
+					<div id="basicwizard" style="margin-top: 20px;">
 						<ul class="nav nav-pills nav-justified form-wizard-header mb-3">
 							<li class="nav-item" data-target-form="#cardForm"><a
 								href="#first" data-toggle="tab"
 								class="nav-link rounded-0 pt-2 pb-2 active"> <i
-									class="mdi mdi-account-circle mr-1"></i> <span
-									class="d-none d-sm-inline">Account</span>
+									class="mdi mdi-hospital-building mr-1"></i> <span
+									class="d-none d-sm-inline">치과선택</span>
 							</a></li>
 							<li class="nav-item" data-target-form="#profileForm"><a
 								href="#second" data-toggle="tab"
 								class="nav-link rounded-0 pt-2 pb-2"> <i
 									class="mdi mdi-face-profile mr-1"></i> <span
-									class="d-none d-sm-inline">Profile</span>
+									class="d-none d-sm-inline">진료분야</span>
 							</a></li>
 							<li class="nav-item" data-target-form="#profileForm"><a
-								href="#second" data-toggle="tab"
-								class="nav-link rounded-0 pt-2 pb-2"> <i
-									class="mdi mdi-face-profile mr-1"></i> <span
-									class="d-none d-sm-inline">Profile</span>
-							</a></li>
-							<li class="nav-item" data-target-form="#profileForm"><a
-								href="#second" data-toggle="tab"
-								class="nav-link rounded-0 pt-2 pb-2"> <i
-									class="mdi mdi-face-profile mr-1"></i> <span
-									class="d-none d-sm-inline">Profile</span>
-							</a></li>
-							<li class="nav-item" data-target-form="#otherForm"><a
 								href="#third" data-toggle="tab"
 								class="nav-link rounded-0 pt-2 pb-2"> <i
+									class="mdi mdi-face-profile mr-1"></i> <span
+									class="d-none d-sm-inline">의료진</span>
+							</a></li>
+							<li class="nav-item" data-target-form="#profileForm"><a
+								href="#fourth" data-toggle="tab"
+								class="nav-link rounded-0 pt-2 pb-2"> <i
+									class="mdi mdi-calendar-clock mr-1"></i> <span
+									class="d-none d-sm-inline">예약일시</span>
+							</a></li>
+							<li class="nav-item" data-target-form="#profileForm"><a
+								href="#fifth" data-toggle="tab"
+								class="nav-link rounded-0 pt-2 pb-2"> <i
+									class="mdi mdi-face-profile mr-1"></i> <span
+									class="d-none d-sm-inline">예약자정보</span>
+							</a></li>
+							<li class="nav-item" data-target-form="#otherForm"><a
+								href="#sixth" data-toggle="tab"
+								class="nav-link rounded-0 pt-2 pb-2"> <i
 									class="mdi mdi-checkbox-marked-circle-outline mr-1"></i> <span
-									class="d-none d-sm-inline">Finish</span>
+									class="d-none d-sm-inline">완료</span>
 							</a></li>
 						</ul>
 
@@ -544,549 +556,328 @@
 							</div>
 
 							<div class="tab-pane fade" id="second">
-								<div class="col-lg-9">
-									<div id="calendar" class="fc fc-unthemed fc-ltr">
-										<div class="fc-toolbar fc-header-toolbar">
-											<div class="fc-left">
-												<div class="fc-button-group">
-													<button type="button"
-														class="fc-prev-button fc-button fc-state-default fc-corner-left"
-														aria-label="prev">
-														<span class="fc-icon fc-icon-left-single-arrow"></span>
-													</button>
-													<button type="button"
-														class="fc-next-button fc-button fc-state-default fc-corner-right"
-														aria-label="next">
-														<span class="fc-icon fc-icon-right-single-arrow"></span>
-													</button>
-												</div>
-												<button type="button"
-													class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled"
-													disabled="">today</button>
+								<div class="row">
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">충치 치료</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
 											</div>
-											<div class="fc-right">
-												<div class="fc-button-group">
-													<button type="button"
-														class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">month</button>
-													<button type="button"
-														class="fc-agendaWeek-button fc-button fc-state-default">week</button>
-													<button type="button"
-														class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">day</button>
-												</div>
-											</div>
-											<div class="fc-center">
-												<h2>April 2019</h2>
-											</div>
-											<div class="fc-clear"></div>
+											<!-- end card-body-->
 										</div>
-										<div class="fc-view-container" style="">
-											<div class="fc-view fc-month-view fc-basic-view" style="">
-												<table class="">
-													<thead class="fc-head">
-														<tr>
-															<td class="fc-head-container fc-widget-header"><div
-																	class="fc-row fc-widget-header">
-																	<table class="">
-																		<thead>
-																			<tr>
-																				<th class="fc-day-header fc-widget-header fc-sun"><span>Sun</span></th>
-																				<th class="fc-day-header fc-widget-header fc-mon"><span>Mon</span></th>
-																				<th class="fc-day-header fc-widget-header fc-tue"><span>Tue</span></th>
-																				<th class="fc-day-header fc-widget-header fc-wed"><span>Wed</span></th>
-																				<th class="fc-day-header fc-widget-header fc-thu"><span>Thu</span></th>
-																				<th class="fc-day-header fc-widget-header fc-fri"><span>Fri</span></th>
-																				<th class="fc-day-header fc-widget-header fc-sat"><span>Sat</span></th>
-																			</tr>
-																		</thead>
-																	</table>
-																</div></td>
-														</tr>
-													</thead>
-													<tbody class="fc-body">
-														<tr>
-															<td class="fc-widget-content"><div
-																	class="fc-scroller fc-day-grid-container"
-																	style="overflow: hidden; height: 373.8px;">
-																	<div class="fc-day-grid fc-unselectable">
-																		<div class="fc-row fc-week fc-widget-content fc-rigid"
-																			style="height: 62px;">
-																			<div class="fc-bg">
-																				<table class="">
-																					<tbody>
-																						<tr>
-																							<td
-																								class="fc-day fc-widget-content fc-sun fc-other-month fc-past"
-																								data-date="2019-03-31"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-mon fc-past"
-																								data-date="2019-04-01"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-tue fc-past"
-																								data-date="2019-04-02"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-wed fc-past"
-																								data-date="2019-04-03"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-thu fc-past"
-																								data-date="2019-04-04"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-fri fc-past"
-																								data-date="2019-04-05"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-sat fc-past"
-																								data-date="2019-04-06"></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																			<div class="fc-content-skeleton">
-																				<table>
-																					<thead>
-																						<tr>
-																							<td
-																								class="fc-day-top fc-sun fc-other-month fc-past"
-																								data-date="2019-03-31"><span
-																								class="fc-day-number">31</span></td>
-																							<td class="fc-day-top fc-mon fc-past"
-																								data-date="2019-04-01"><span
-																								class="fc-day-number">1</span></td>
-																							<td class="fc-day-top fc-tue fc-past"
-																								data-date="2019-04-02"><span
-																								class="fc-day-number">2</span></td>
-																							<td class="fc-day-top fc-wed fc-past"
-																								data-date="2019-04-03"><span
-																								class="fc-day-number">3</span></td>
-																							<td class="fc-day-top fc-thu fc-past"
-																								data-date="2019-04-04"><span
-																								class="fc-day-number">4</span></td>
-																							<td class="fc-day-top fc-fri fc-past"
-																								data-date="2019-04-05"><span
-																								class="fc-day-number">5</span></td>
-																							<td class="fc-day-top fc-sat fc-past"
-																								data-date="2019-04-06"><span
-																								class="fc-day-number">6</span></td>
-																						</tr>
-																					</thead>
-																					<tbody>
-																						<tr>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																		</div>
-																		<div class="fc-row fc-week fc-widget-content fc-rigid"
-																			style="height: 62px;">
-																			<div class="fc-bg">
-																				<table class="">
-																					<tbody>
-																						<tr>
-																							<td
-																								class="fc-day fc-widget-content fc-sun fc-past"
-																								data-date="2019-04-07"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-mon fc-past"
-																								data-date="2019-04-08"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-tue fc-past"
-																								data-date="2019-04-09"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-wed fc-past"
-																								data-date="2019-04-10"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-thu fc-past"
-																								data-date="2019-04-11"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-fri fc-past"
-																								data-date="2019-04-12"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-sat fc-past"
-																								data-date="2019-04-13"></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																			<div class="fc-content-skeleton">
-																				<table>
-																					<thead>
-																						<tr>
-																							<td class="fc-day-top fc-sun fc-past"
-																								data-date="2019-04-07"><span
-																								class="fc-day-number">7</span></td>
-																							<td class="fc-day-top fc-mon fc-past"
-																								data-date="2019-04-08"><span
-																								class="fc-day-number">8</span></td>
-																							<td class="fc-day-top fc-tue fc-past"
-																								data-date="2019-04-09"><span
-																								class="fc-day-number">9</span></td>
-																							<td class="fc-day-top fc-wed fc-past"
-																								data-date="2019-04-10"><span
-																								class="fc-day-number">10</span></td>
-																							<td class="fc-day-top fc-thu fc-past"
-																								data-date="2019-04-11"><span
-																								class="fc-day-number">11</span></td>
-																							<td class="fc-day-top fc-fri fc-past"
-																								data-date="2019-04-12"><span
-																								class="fc-day-number">12</span></td>
-																							<td class="fc-day-top fc-sat fc-past"
-																								data-date="2019-04-13"><span
-																								class="fc-day-number">13</span></td>
-																						</tr>
-																					</thead>
-																					<tbody>
-																						<tr>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																		</div>
-																		<div class="fc-row fc-week fc-widget-content fc-rigid"
-																			style="height: 62px;">
-																			<div class="fc-bg">
-																				<table class="">
-																					<tbody>
-																						<tr>
-																							<td
-																								class="fc-day fc-widget-content fc-sun fc-past"
-																								data-date="2019-04-14"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-mon fc-past"
-																								data-date="2019-04-15"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-tue fc-past"
-																								data-date="2019-04-16"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-wed fc-past"
-																								data-date="2019-04-17"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-thu fc-past"
-																								data-date="2019-04-18"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-fri fc-past"
-																								data-date="2019-04-19"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-sat fc-past"
-																								data-date="2019-04-20"></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																			<div class="fc-content-skeleton">
-																				<table>
-																					<thead>
-																						<tr>
-																							<td class="fc-day-top fc-sun fc-past"
-																								data-date="2019-04-14"><span
-																								class="fc-day-number">14</span></td>
-																							<td class="fc-day-top fc-mon fc-past"
-																								data-date="2019-04-15"><span
-																								class="fc-day-number">15</span></td>
-																							<td class="fc-day-top fc-tue fc-past"
-																								data-date="2019-04-16"><span
-																								class="fc-day-number">16</span></td>
-																							<td class="fc-day-top fc-wed fc-past"
-																								data-date="2019-04-17"><span
-																								class="fc-day-number">17</span></td>
-																							<td class="fc-day-top fc-thu fc-past"
-																								data-date="2019-04-18"><span
-																								class="fc-day-number">18</span></td>
-																							<td class="fc-day-top fc-fri fc-past"
-																								data-date="2019-04-19"><span
-																								class="fc-day-number">19</span></td>
-																							<td class="fc-day-top fc-sat fc-past"
-																								data-date="2019-04-20"><span
-																								class="fc-day-number">20</span></td>
-																						</tr>
-																					</thead>
-																					<tbody>
-																						<tr>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																		</div>
-																		<div class="fc-row fc-week fc-widget-content fc-rigid"
-																			style="height: 62px;">
-																			<div class="fc-bg">
-																				<table class="">
-																					<tbody>
-																						<tr>
-																							<td
-																								class="fc-day fc-widget-content fc-sun fc-past"
-																								data-date="2019-04-21"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-mon fc-past"
-																								data-date="2019-04-22"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-tue fc-past"
-																								data-date="2019-04-23"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-wed fc-past"
-																								data-date="2019-04-24"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-thu fc-past"
-																								data-date="2019-04-25"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-fri fc-past"
-																								data-date="2019-04-26"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-sat fc-past"
-																								data-date="2019-04-27"></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																			<div class="fc-content-skeleton">
-																				<table>
-																					<thead>
-																						<tr>
-																							<td class="fc-day-top fc-sun fc-past"
-																								data-date="2019-04-21"><span
-																								class="fc-day-number">21</span></td>
-																							<td class="fc-day-top fc-mon fc-past"
-																								data-date="2019-04-22"><span
-																								class="fc-day-number">22</span></td>
-																							<td class="fc-day-top fc-tue fc-past"
-																								data-date="2019-04-23"><span
-																								class="fc-day-number">23</span></td>
-																							<td class="fc-day-top fc-wed fc-past"
-																								data-date="2019-04-24"><span
-																								class="fc-day-number">24</span></td>
-																							<td class="fc-day-top fc-thu fc-past"
-																								data-date="2019-04-25"><span
-																								class="fc-day-number">25</span></td>
-																							<td class="fc-day-top fc-fri fc-past"
-																								data-date="2019-04-26"><span
-																								class="fc-day-number">26</span></td>
-																							<td class="fc-day-top fc-sat fc-past"
-																								data-date="2019-04-27"><span
-																								class="fc-day-number">27</span></td>
-																						</tr>
-																					</thead>
-																					<tbody>
-																						<tr>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																		</div>
-																		<div class="fc-row fc-week fc-widget-content fc-rigid"
-																			style="height: 62px;">
-																			<div class="fc-bg">
-																				<table class="">
-																					<tbody>
-																						<tr>
-																							<td
-																								class="fc-day fc-widget-content fc-sun fc-past"
-																								data-date="2019-04-28"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-mon fc-past"
-																								data-date="2019-04-29"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-tue fc-today "
-																								data-date="2019-04-30"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-wed fc-other-month fc-future"
-																								data-date="2019-05-01"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-thu fc-other-month fc-future"
-																								data-date="2019-05-02"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-fri fc-other-month fc-future"
-																								data-date="2019-05-03"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-sat fc-other-month fc-future"
-																								data-date="2019-05-04"></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																			<div class="fc-content-skeleton">
-																				<table>
-																					<thead>
-																						<tr>
-																							<td class="fc-day-top fc-sun fc-past"
-																								data-date="2019-04-28"><span
-																								class="fc-day-number">28</span></td>
-																							<td class="fc-day-top fc-mon fc-past"
-																								data-date="2019-04-29"><span
-																								class="fc-day-number">29</span></td>
-																							<td class="fc-day-top fc-tue fc-today "
-																								data-date="2019-04-30"><span
-																								class="fc-day-number">30</span></td>
-																							<td
-																								class="fc-day-top fc-wed fc-other-month fc-future"
-																								data-date="2019-05-01"><span
-																								class="fc-day-number">1</span></td>
-																							<td
-																								class="fc-day-top fc-thu fc-other-month fc-future"
-																								data-date="2019-05-02"><span
-																								class="fc-day-number">2</span></td>
-																							<td
-																								class="fc-day-top fc-fri fc-other-month fc-future"
-																								data-date="2019-05-03"><span
-																								class="fc-day-number">3</span></td>
-																							<td
-																								class="fc-day-top fc-sat fc-other-month fc-future"
-																								data-date="2019-05-04"><span
-																								class="fc-day-number">4</span></td>
-																						</tr>
-																					</thead>
-																					<tbody>
-																						<tr>
-																							<td rowspan="2"></td>
-																							<td rowspan="2"></td>
-																							<td class="fc-event-container" rowspan="2"><a
-																								class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bg-success fc-draggable"><div
-																										class="fc-content">
-																										<span class="fc-time">10:46a</span> <span
-																											class="fc-title">See John Deo</span>
-																									</div></a></td>
-																							<td rowspan="2"></td>
-																							<td class="fc-event-container"><a
-																								class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bg-warning fc-draggable"><div
-																										class="fc-content">
-																										<span class="fc-time">6:39a</span> <span
-																											class="fc-title">Hey!</span>
-																									</div></a></td>
-																							<td rowspan="2"></td>
-																							<td class="fc-event-container" rowspan="2"><a
-																								class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bg-primary fc-draggable"><div
-																										class="fc-content">
-																										<span class="fc-time">8:39a</span> <span
-																											class="fc-title">Buy a Theme</span>
-																									</div></a></td>
-																						</tr>
-																						<tr>
-																							<td class="fc-event-container"><a
-																								class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bg-info fc-draggable"><div
-																										class="fc-content">
-																										<span class="fc-time">9:26a</span> <span
-																											class="fc-title">Meet John Deo</span>
-																									</div></a></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																		</div>
-																		<div class="fc-row fc-week fc-widget-content fc-rigid"
-																			style="height: 63px;">
-																			<div class="fc-bg">
-																				<table class="">
-																					<tbody>
-																						<tr>
-																							<td
-																								class="fc-day fc-widget-content fc-sun fc-other-month fc-future"
-																								data-date="2019-05-05"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-mon fc-other-month fc-future"
-																								data-date="2019-05-06"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-tue fc-other-month fc-future"
-																								data-date="2019-05-07"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-wed fc-other-month fc-future"
-																								data-date="2019-05-08"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-thu fc-other-month fc-future"
-																								data-date="2019-05-09"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-fri fc-other-month fc-future"
-																								data-date="2019-05-10"></td>
-																							<td
-																								class="fc-day fc-widget-content fc-sat fc-other-month fc-future"
-																								data-date="2019-05-11"></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																			<div class="fc-content-skeleton">
-																				<table>
-																					<thead>
-																						<tr>
-																							<td
-																								class="fc-day-top fc-sun fc-other-month fc-future"
-																								data-date="2019-05-05"><span
-																								class="fc-day-number">5</span></td>
-																							<td
-																								class="fc-day-top fc-mon fc-other-month fc-future"
-																								data-date="2019-05-06"><span
-																								class="fc-day-number">6</span></td>
-																							<td
-																								class="fc-day-top fc-tue fc-other-month fc-future"
-																								data-date="2019-05-07"><span
-																								class="fc-day-number">7</span></td>
-																							<td
-																								class="fc-day-top fc-wed fc-other-month fc-future"
-																								data-date="2019-05-08"><span
-																								class="fc-day-number">8</span></td>
-																							<td
-																								class="fc-day-top fc-thu fc-other-month fc-future"
-																								data-date="2019-05-09"><span
-																								class="fc-day-number">9</span></td>
-																							<td
-																								class="fc-day-top fc-fri fc-other-month fc-future"
-																								data-date="2019-05-10"><span
-																								class="fc-day-number">10</span></td>
-																							<td
-																								class="fc-day-top fc-sat fc-other-month fc-future"
-																								data-date="2019-05-11"><span
-																								class="fc-day-number">11</span></td>
-																						</tr>
-																					</thead>
-																					<tbody>
-																						<tr>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																							<td></td>
-																						</tr>
-																					</tbody>
-																				</table>
-																			</div>
-																		</div>
-																	</div>
-																</div></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
+										<!-- end card-->
 									</div>
+									<!-- end col -->
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">검진</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">교정</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">스케일링</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+
 								</div>
 							</div>
 
 							<div class="tab-pane fade" id="third">
+								<div class="row">
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">A 선생님</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">B 선생님</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">C 치위생사님</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+
+									<div class="col-md-6 col-lg-3">
+										<!-- Simple card -->
+										<div class="card d-block">
+											<img class="card-img-top" src="resources/image/small-1.jpg"
+												alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">D 치위생사님</h5>
+												<p class="card-text">Some quick example text to build on
+													the card title and make up the bulk of the card's content.
+													Some quick example text to build on the card title and make
+													up.</p>
+												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
+											</div>
+											<!-- end card-body-->
+										</div>
+										<!-- end card-->
+									</div>
+									<!-- end col -->
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="fourth">
+								<div class="row">
+									<div class="col-12">
+
+										<div class="card">
+											<div class="card-body">													
+												<div id="calendar" class="fc fc-unthemed fc-ltr">
+													
+												</div>
+											</div>
+											<!-- end card body-->
+										</div>
+										<!-- end card -->
+
+										<!-- Add New Event MODAL -->
+										<div class="modal fade" id="event-modal" tabindex="-1">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header pr-4 pl-4 border-bottom-0 d-block">
+														<button type="button" class="close" data-dismiss="modal"
+															aria-hidden="true">×</button>
+														<h4 class="modal-title">Add New Event</h4>
+													</div>
+													<div class="modal-body pt-3 pr-4 pl-4"></div>
+													<div class="text-right pb-4 pr-4">
+														<button type="button" class="btn btn-light "
+															data-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-success save-event  ">Create
+															event</button>
+														<button type="button"
+															class="btn btn-danger delete-event  "
+															data-dismiss="modal">Delete</button>
+													</div>
+												</div>
+												<!-- end modal-content-->
+											</div>
+											<!-- end modal dialog-->
+										</div>
+										<!-- end modal-->
+
+										<!-- Modal Add Category -->
+										<div class="modal fade" id="add-category" tabindex="-1">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header border-bottom-0 d-block">
+														<button type="button" class="close" data-dismiss="modal"
+															aria-hidden="true">×</button>
+														<h4 class="modal-title">Add a category</h4>
+													</div>
+													<div class="modal-body p-4">
+														<form>
+															<div class="form-group">
+																<label class="control-label">Category Name</label> <input
+																	class="form-control form-white"
+																	placeholder="Enter name" type="text"
+																	name="category-name">
+															</div>
+															<div class="form-group">
+																<label class="control-label">Choose Category
+																	Color</label> <select class="form-control form-white"
+																	data-placeholder="Choose a color..."
+																	name="category-color">
+																	<option value="primary">Primary</option>
+																	<option value="success">Success</option>
+																	<option value="danger">Danger</option>
+																	<option value="info">Info</option>
+																	<option value="warning">Warning</option>
+																	<option value="dark">Dark</option>
+																</select>
+															</div>
+
+														</form>
+
+														<div class="text-right">
+															<button type="button" class="btn btn-light "
+																data-dismiss="modal">Close</button>
+															<button type="button"
+																class="btn btn-primary ml-1   save-category"
+																data-dismiss="modal">Save</button>
+														</div>
+
+													</div>
+													<!-- end modal-body-->
+												</div>
+												<!-- end modal-content-->
+											</div>
+											<!-- end modal dialog-->
+										</div>
+										<!-- end modal-->
+									</div>
+									<!-- end col-12 -->
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="fifth">
+								<div class="card">
+									<div class="card-body">
+										<h2 class="header-title">예약자 정보 입력</h2>
+										<p class="text-muted">Please enter additional information
+											to enter.</p>
+
+										<div class="row">
+											<div class="col-lg-6">
+												<form>
+													<div class="form-group mb-3">
+														<label for="simpleinput">이름</label> <input type="text"
+															id="name" class="form-control" required>
+													</div>
+
+													<div class="form-group mb-3">
+														<label for="example-date">생년월일</label> <input
+															class="form-control" id="birth" type="date" name="date"
+															required>
+													</div>
+
+													<div class="form-group">
+														<label>전화번호</label> <input type="text" class="form-control"
+															data-toggle="input-mask" data-mask-format="000-0000-0000"
+															maxlength="13" required> <span
+															class="font-13 text-muted">e.g "01x-xxxx-xxxx"</span>
+													</div>
+
+													<div class="form-group mb-3">
+														<label for="simpleinput">주소</label> <input
+															type="text" id="address" class="form-control" required>
+													</div>
+												</form>
+											</div>
+											<!-- end col -->
+
+											<div class="col-lg-6">
+												<form>
+													<div class="form-group mb-3">
+														<label for="example-textarea">특이사항</label>
+														<textarea class="form-control" id="additional-info"
+															rows="7"></textarea>
+													</div>
+
+													<div class="custom-control custom-checkbox"
+														style="margin-left: 10px">
+														<input type="checkbox" class="custom-control-input"
+															id="checkmeout0" required> <label
+															class="custom-control-label" for="checkmeout0">개인정보 제공에 동의합니다.</label>
+													</div>
+
+													<br>
+													<br>
+													<button type="submit" class="btn btn-primary"
+														style="float: right; margin-right: 20px">Reservation</button>
+
+												</form>
+											</div>
+											<!-- end col -->
+										</div>
+										<!-- end row-->
+
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-pane fade" id="sixth">
 								<form id="otherForm" method="post" action="#"
 									class="form-horizontal"></form>
 								<div class="row">
@@ -1095,7 +886,8 @@
 											<h2 class="mt-0">
 												<i class="mdi mdi-check-all"></i>
 											</h2>
-											<h3 class="mt-0">Thank you !</h3>
+											<h3 class="mt-0">Your reservation is complete.</h3>
+											<br>
 
 											<p class="w-75 mb-2 mx-auto">Quisque nec turpis at urna
 												dictum luctus. Suspendisse convallis dignissim eros at
@@ -1303,15 +1095,16 @@
 
 	<!-- App js -->
 	<script src="resources/js/app.min.js"></script>
-	
+
 	<!-- third party js -->
 	<script src="resources/js/jquery-ui.min.js"></script>
 	<script src="resources/js/fullcalendar.min.js"></script>
 	<!-- thrid party js ends -->
-	
+
 	<!-- demo app -->
 	<script src="resources/js/demo.calendar.js"></script>
+	<script src="resources/js/demo.form-wizard.js"></script>
 	<!-- end demo app -->
-	
+
 </body>
 </html>
