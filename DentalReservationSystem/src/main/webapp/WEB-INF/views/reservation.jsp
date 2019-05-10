@@ -23,6 +23,14 @@
 	type="text/css">
 <!-- third party css end -->
 
+<!-- jquery.js -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- jquery.js ends -->
+
+<!-- reservation_logic js -->
+<script src="resources/js/reservation_logic.js"></script>
+<!-- end reservation_logic js -->
+
 </head>
 
 <body>
@@ -638,82 +646,14 @@
 							</div>
 
 							<div class="tab-pane fade" id="third">
-								<div class="row">
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">A 선생님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
-
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">B 선생님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
-
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">C 치위생사님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
-
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">D 치위생사님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
+								<div id="mediTeamInfo" class="row">
+									<form>
+										<input type="hidden" id="selectedField" value="스케일링">
+									</form>
+									<script type="text/javascript">
+										loadMediTeamInfo();
+									</script>
+									
 								</div>
 							</div>
 
@@ -1105,6 +1045,8 @@
 	<script src="resources/js/demo.calendar.js"></script>
 	<script src="resources/js/demo.form-wizard.js"></script>
 	<!-- end demo app -->
+	
+	
 
 </body>
 </html>
