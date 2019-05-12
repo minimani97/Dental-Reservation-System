@@ -23,6 +23,15 @@
 	type="text/css">
 <!-- third party css end -->
 
+<!-- jquery.js -->
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- jquery.js ends -->
+
+<!-- reservation_logic js -->
+<script src="resources/js/reservation_logic.js"></script>
+<!-- end reservation_logic js -->
+
 </head>
 
 <body>
@@ -529,18 +538,17 @@
 									class="form-horizontal">
 									<div class="row">
 										<div class="col-12">
-											<div class="form-group row mb-3" width="100%">
-
-												<div id="map" style="width: 700px; height: 500px;"></div>
-
-												<div class="col-md-9">
-
-													<input type="button" class="btn btn-primary"
-														onclick="init()" value="내 위치로 검색"> <br> <input
-														type="text" id="sample5_address" placeholder="주소">
+											<div class="form-group row mb-3">
+												<div style="width: 1500px; text-align:center;">
+													<input type="text" id="sample5_address"  style="width:400px; margin-bottom: 40px; margin-top: 20px;" placeholder="주소 입력">
 													<input type="button" class="btn btn-primary"
 														onclick="sample5_execDaumPostcode()" value="주소 검색">
+													<input type="button" class="btn btn-primary"
+														onclick="init()" value="내 위치에서 가까운 병원 검색">
 												</div>
+												
+												<div id="map"
+													style="display: inline; width: 1500px; height: 600px; text-align:center; margin-left: 50px;"></div>
 											</div>
 										</div>
 									</div>
@@ -630,82 +638,14 @@
 							</div>
 
 							<div class="tab-pane fade" id="third">
-								<div class="row">
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">A 선생님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
+								<div id="mediTeamInfo" class="row">
+									<form>
+										<input type="hidden" id="selectedField" value="스케일링">
+									</form>
+									<script type="text/javascript">
+										loadMediTeamInfo();
+									</script>
 
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">B 선생님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
-
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">C 치위생사님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
-
-									<div class="col-md-6 col-lg-3">
-										<!-- Simple card -->
-										<div class="card d-block">
-											<img class="card-img-top" src="resources/image/small-1.jpg"
-												alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">D 치위생사님</h5>
-												<p class="card-text">Some quick example text to build on
-													the card title and make up the bulk of the card's content.
-													Some quick example text to build on the card title and make
-													up.</p>
-												<a href="javascript: void(0);" class="btn btn-primary">선택</a>
-											</div>
-											<!-- end card-body-->
-										</div>
-										<!-- end card-->
-									</div>
-									<!-- end col -->
 								</div>
 							</div>
 
@@ -1097,6 +1037,8 @@
 	<script src="resources/js/demo.form-wizard.js"></script>
 	<!-- end demo app -->
 
+
+
 	<script>
 		//현재 위치
 		window.onload = map_initialize1();
@@ -1226,13 +1168,10 @@
 
 		}
 
-		
-		
-
 		function sample5_execDaumPostcode() {
 			//주소-좌표 변환 객체를 생성
 			var geocoder = new daum.maps.services.Geocoder();
-			
+
 			new daum.Postcode({
 				oncomplete : function(data) {
 					var addr = data.address; // 최종 주소 변수
@@ -1248,11 +1187,12 @@
 							var result = results[0]; //첫번째 결과의 값을 활용
 
 							// 해당 주소에 대한 좌표를 받아서
-							var coords = new daum.maps.LatLng(result.y, result.x);
-							
+							var coords = new daum.maps.LatLng(result.y,
+									result.x);
+
 							// 지도 중심을 변경한다.
 							map_initialize2(result.y, result.x);
-							
+
 						}
 					});
 				}
