@@ -2,6 +2,7 @@ package com.sunmoon.reservation.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -13,6 +14,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sunmoon.reservation.model.MediTeamInfo;
 
 @Repository
@@ -52,5 +55,30 @@ public class ReservationDao {
 		});
 		
 		return results;
+	}
+	
+	
+	public String getMapInfo() {
+		
+		ArrayList<String> c_data = new ArrayList<String>();
+		
+		String sqlClinicCode = "select c_code from clinic_info;";
+		String clinicCode = jdbcTemplate.queryForObject(sqlClinicCode, String.class);
+		c_data.add(clinicCode);
+		
+		String sqlClinicName = "select c_name from clinic_info;";
+		String clinicName = jdbcTemplate.queryForObject(sqlClinicName, String.class);
+		c_data.add(clinicName);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonString = "";
+		try {
+			jsonString = mapper.writeValueAsString(c_data);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+
+		return jsonString;
+
 	}
 }

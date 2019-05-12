@@ -32,4 +32,8 @@ public class ReservationController {
 		
 		return reservationService.loadMediTeamInfo(selectedField);
 	}
+	
+	public String getMapInfo() {
+		return reservationService.getMapInfoService();
+	}
 }

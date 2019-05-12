@@ -25,4 +25,7 @@ public class ReservationService {
 		logger.info("Service_loadMediTeamInfo Function");
 		return reservationDao.loadMediTeamInfo(selectedField);
 	}
+	public String getMapInfoService() {
+		return reservationDao.getMapInfo();
+	}
 }
