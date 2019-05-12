@@ -546,7 +546,6 @@
 													<input type="button" class="btn btn-primary"
 														onclick="init()" value="내 위치에서 가까운 병원 검색">
 												</div>
-												
 												<div id="map"
 													style="display: inline; width: 1500px; height: 600px; text-align:center; margin-left: 50px;"></div>
 											</div>
